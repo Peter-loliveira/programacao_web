@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<style>
+		form,#form_contato {
+			text-align: center;
+		}
+		#form_contato{
+			border-radius: 5px;
+			width: fit-content;
+			margin: 0 auto;
+			box-shadow: 11px 15px 20px #989898;
+			    padding: 30px;
+		}
+		h2,label,input {
+			font-family: 'Open Sans', sans-serif;
+		}
+		label,h2 {
+			color: grey;
+		}
+		input, textarea {
+			margin: 5px;
+			padding: 5px;
+			border: solid 1px blueviolet;
+			border-radius: 5px;
+		}
+		button {
+			padding: 10px;
+			margin: 5px;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			background-color: blueviolet;
+		}
+
+	</style>
+</head>
+
+<body>
+	
+	<div id="form_contato">
+	<div name="titulo">
+		<h2>Contato</h2>
+	</div>
+		<form>
+			<div name="nome" method="get">
+				<label>Nome</label><br>
+				<input type="text" id="nome_cliente" placeholder="Nome">
+			</div name="email">
+			
+			<div name="email">
+				<label>Email</label><br>
+				<input type="email" id="email_cliente" placeholder="Email">
+			</div>
+			<div name="mensagem">
+				<label>Mensagem</label><br>
+				<textarea placeholder="Digite seu texto"></textarea>
+			</div>
+			<div name="botao">
+				<button>Submit</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
