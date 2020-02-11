@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+	<style>
+	
+		*{
+			font-family: 'Cinzel', serif;
+		}
+		
+		.form-holder{
+			padding: 50px;
+			box-shadow: 5px 5px 20px 0px #a2a2a2;
+			width: fit-content;
+			margin: 0 auto;
+			border-top-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+		label,input {
+			margin:0 5px 15px 5px;
+		}
+		
+		h3 {
+			text-align: center;
+		}
+		
+		input, textarea {
+			border: solid 1px blueviolet;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		
+		label {
+			color: blueviolet;
+		}
+		
+		select {
+			background-color: blueviolet;
+			padding: 5px;
+			color: white;
+			margin-bottom: 15px
+		}
+		
+		.button-holder{
+			text-align: right;
+			margin-top: 20px
+		}
+		
+		button {
+			margin-right: 10px;
+			border: none;
+			border-radius: 5px;
+			background-color: blueviolet;
+			color: white;
+			padding: 10px;
+		}
+		
+		button:hover {
+			color: blueviolet;
+			border: solid 1px blueviolet;
+			background-color: white;
+			transition: 0.5s;
+		}
+		
+		.descricao-holder {
+			display: flex;
+		}
+		
+		.evoluido-holder{
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="form-holder">
+		<form>
+			<h3>POKESYSTEM</h3>
+			<div class="nome-holder">
+				<label>Nome</label>
+				<input type="text"  placeholder="digite o nome do seu pokemon"/>
+				<br>
+			</div>
+			<div class="select-holder">
+			<label>Tipo</label>
+				<select>
+					<option value="eletrico">eletrico</option>
+					<option value="fogo">fogo</option>
+					<option value="agua">agua</option>
+					<option value="terra">terra</option>
+					<option value="gelo">gelo</option>
+					<option value="psiquico">psiquico</option>
+					<option value="planta">planta</option>
+				</select>
+			</div>
+			<div style="display: flex">
+				<div>
+					<div class="ataque-holder">
+						<label>Ataque</label>
+						<input type="number" min="0" max="100" placeholder="0 - 100"><label>Evoluido</label>
+					</div>
+					<div class="defesa-holder">
+						<label>Defesa</label>
+						<input type="number" min="0" max="100" placeholder="0 - 100">
+						<label>Sim</label>
+						<input	checked type="radio" name="radio-evoluido">
+						<label>Não</label>
+						<input type="radio" name="radio-evoluido">
+					</div>
+				</div>
+				<div class="evoluido-holder">
+					
+				</div>
+				</div>
+			<div class="descricao-holder">
+				<label>Descrição</label>
+				<textarea  placeholder="Quais as caracteristicas desse pokemon?"></textarea>
+				<br>
+			</div>
+			<div class="button-holder">
+				<button>Salvar</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
