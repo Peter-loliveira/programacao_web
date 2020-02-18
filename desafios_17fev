@@ -1,0 +1,86 @@
+var myvar;
+myvar = 10;
+var soma = 15+8;
+soma++;
+soma*=3;
+72
+var souninja = true;
+var comida = ['arroz', 'feijão','ovo'];
+comida[1];
+soma === myvar
+myvar<=soma
+function divisao(a,b){
+	return a/b;
+}
+divisao(10,2)
+
+function soma(a,b){
+	return a+b;
+}
+var resultado = soma(10,5)+5
+20
+var seila;
+function faladora(x){
+	seila = x
+	return 'O valor da variável agora é '+seila
+}
+
+faladora(10)
+/*
+O valor da variável agora é 10
+*/
+function haha(a,b,c){
+	if(a,b,c){
+		return a*b*c+2
+		
+	}else{
+		return 'Preencha todos os valores corretamente!'
+	}
+}
+haha(1,2)
+//Preencha todos os valores corretamente!
+haha(1,2,3)
+//8
+function terceiraFunc(a,b,c){
+	if(a||b||c){
+		if(a&&b&&c){
+			return (a+b)/c
+		}
+		if(a&&b){
+			return a+b; 
+		}
+		if(a&&c){
+			return a+c
+		}
+		if(b&&c){
+			return b+c
+		}
+		if(a){
+			return a;
+		}	
+		if(b){
+			return b;
+		}
+		if(c){
+			return c;
+		}
+	}else{
+		return false;
+	}
+}
+ terceiraFunc(1)
+//1
+ terceiraFunc(1,2)
+//2
+ terceiraFunc(1,2,3)
+//1
+ terceiraFunc()
+false
+
+
+
+
+
+
+
+
