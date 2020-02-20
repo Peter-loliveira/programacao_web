@@ -1,0 +1,66 @@
+var seila ={}
+var pessoa = {
+	nome: 'caio',
+	sobrenome: 'ribeiro',
+	sexo: 'masculino',
+	idade: 24,
+	altura: 173,
+	peso:80,
+	andando: false,
+	caminhouQuantosMetros : 0
+}
+pessoa.fazerAniversario = function fazerAniversario(){
+	this.idade ++
+}
+pessoa.andar = function andar(value){
+	this.caminhouQuantosMetros+=value
+	this.andando = true
+}
+pessoa.parar = function parar(){
+	this.andando = false
+}
+pessoa.nomeCompleto = function nomeCompleto(){
+	return 'Olá! Meu nome é '+this.nome+' '+this.sobrenome
+}
+pessoa.mostrarIdade = function mostrarIdade(){
+	return 'Olá, eu tenho '+this.idade+' anos'
+}
+pessoa.mostrarPeso = function mostrarPeso(){
+	return 'Eu peso '+this.peso+'KG'
+}
+pessoa.mostrarAltura = function mostrarAltura(){
+	return 'minha altura é'+this.altura/100+'m'
+}
+
+pessoa.nomeCompleto() //Olá! Meu nome é caio ribeiro
+pessoa.idade //24
+pessoa.peso //80
+pessoa.altura //173
+pessoa.fazerAniversario()
+pessoa.fazerAniversario()
+pessoa.fazerAniversario()
+pessoa.idade // 27
+pessoa.andar(1)
+pessoa.andar(2)
+pessoa.andar(3)
+pessoa.andando //true
+pessoa.parar()
+pessoa.andando //false
+pessoa.caminhouQuantosMetros // 6
+pessoa.apresentacao = function apresentacao(){
+	var pronome = 'o'
+	var age = 'anos'
+	var qtdMetros = 'metros'
+	if(this.sexo == 'feminino'){
+		pronome ='a'
+	}
+	if(this.idade == 1){
+		age = 'ano'
+	}
+	if(this.caminhouQuantosMetros == 1){
+		qtdMetros = 'metro'
+	}
+	return 'Olá, eu sou '+pronome+' '+pessoa.nome+' '+pessoa.sobrenome+', tenho '+pessoa.idade+' '+age+', '+pessoa.altura+', meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.caminhouQuantosMetros+' '+qtdMetros
+}
+
+
