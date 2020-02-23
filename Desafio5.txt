@@ -1,0 +1,56 @@
+var seila = [1,2,3,4,5]
+function returnArray(myArray){
+	if(typeof(myArray)=='object'){
+		return myArray
+	}
+	
+}
+returnArray(myArray)[1]
+function getData(myArray,myIndex){
+	return myArray[myIndex]
+}
+var seila2 = ['1',1,[],{},true]
+getData(seila2,0)
+getData(seila2,1)
+getData(seila2,2)
+getData(seila2,3)
+getData(seila2,4)
+function book(livro){
+
+	var objLivro = {
+		seila1:{
+			quantidadePaginas:100,
+			autor: 'seila1',
+			editora: 'lasei1'
+		},
+		seila2:{
+			quantidadePaginas:200,
+			autor: 'seila2',
+			editora: 'lasei2'
+		},
+		seila3:{
+			quantidadePaginas:300,
+			autor: 'seila3',
+			editora: 'lasei3'
+		}
+	}
+	if(livro != undefined){
+		for (let key in objLivro) {
+  			if(key==livro){
+				return objLivro[key]
+			}
+		}
+	}else{
+		for (let key in objLivro) {
+			console.log(objLivro[key])
+		}
+	}
+	
+
+}
+
+book()
+book("seila1").quantidadePaginas
+"O autor do livro "+"seila1"+" é: "+book("seila1").autor
+book("seila1").editora
+
