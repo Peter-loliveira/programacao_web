@@ -35,15 +35,9 @@ function book(livro){
 		}
 	}
 	if(livro != undefined){
-		for (let key in objLivro) {
-  			if(key==livro){
-				return objLivro[key]
-			}
-		}
+		return objLivro[livro]
 	}else{
-		for (let key in objLivro) {
-			console.log(objLivro[key])
-		}
+		return objLivro
 	}
 	
 
