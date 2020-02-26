@@ -1,0 +1,45 @@
+var sum = function calculateSum(a,b){
+	return a+b
+}
+console.log("A soma de 1 e 2 é igual a "+sum(1,2))
+console.log("O nome da função que faz a soma é calculateSum.")
+function showName(){
+	return 'caio'
+}
+var varShowName = showName
+console.log("A função showName retorna "+varShowName())
+var calculator = function(parametro){
+	function seila(a,b){
+		var parametro2 = parametro
+		switch (parametro2){
+			case '+':
+				return a+b
+			break;
+			case '-':
+				return a-b
+			break;
+			case '/':
+				return a/b
+			break;
+			case '*':
+				return a*b
+			break;
+			case '%':
+				return a%b
+			break;
+			default: 
+				return "Operação inválida."
+		}
+	}
+	return seila
+}
+var sum = calculator('+')
+console.log(sum(1,2)) // 3
+var subtraction = calculator('-')
+console.log(subtraction(1,2)) // -1
+var multiplication = calculator('*')
+console.log(multiplication(1,2)) // 2
+var division = calculator('/')
+console.log(division(1,2)) // 0.5
+var mod = calculator('%')
+console.log(mod(1,2)) // 1

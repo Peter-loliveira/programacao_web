@@ -1,0 +1,55 @@
+(function(){
+	function myFunction() {
+		var number1 = 10;
+		var number2 = 20;
+		console.log( 'Na função `myFunction`, o primeiro número é', number1 );
+		console.log( 'Na função `myFunction`, o segundo número é', number2 );
+		return number1 + number2;
+	}
+	myFunction();
+
+	function myFunction2() {
+		var number1 = 10;
+		var number2 = 20;
+ 		var sum = function sum() {
+			return number1 + number2;
+		};
+		console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
+		return sum();
+	}
+	myFunction2();
+
+	function myFunction3() {
+		var number1 = 40;
+		var number2 = 50;
+		function sum() {
+			return number1 + number2;
+		};
+		console.log( 'A soma de 40 e 50 é igual a', sum() );
+		console.log( 'Na função myFunction3, number1 é igual a', number1 );
+		return sum();
+		
+	}
+	myFunction3();
+	
+	function calculator(a,b){
+		return function(callback){
+				return callback(a,b)
+			}
+	}
+	var sum = calculator(2,3)
+	console.log( 'O resultado da soma é: '+sum(function(a,b){return a+b}) );
+
+	var subtraction = calculator(4,5)
+	console.log( 'O resultado da soma é: '+subtraction(function(a,b){return a-b}))
+
+	var multiplication = calculator(6,7)
+	console.log( 'O resultado da soma é: '+multiplication(function(a,b){return a*b}))
+
+	var division = calculator(8,9)
+	console.log( 'O resultado da soma é: '+division(function(a,b){return a/b}))
+
+	var mod = calculator(10,11)
+	console.log( 'O resultado da soma é: '+mod(function(a,b){return a%b}))
+
+})()
