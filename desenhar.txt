@@ -1,0 +1,47 @@
+let mouseCoord = []
+let body = document.getElementsByTagName('body')[0]
+let canvas = document.createElement('div')
+canvas.style.width = window.innerWidth+'px'
+canvas.style.height = window.outerHeight+'px'
+canvas.style.position = 'absolute'
+canvas.style.top = '0px'
+canvas.style.left = '0px'
+canvas.style.backgroundColor = 'white'
+let listener = function listener(e){
+	let coord = []
+	coord [0] = e.clientX
+	coord [1] = e.clientY
+	mouseCoord.push(coord)
+		let pixel = document.createElement('div')
+		pixel.style.top = coord[1]+'px'
+		pixel.style.left = coord[0]+'px'
+		pixel.style.backgroundColor = 'black'
+		pixel.style.margin = '0'
+		pixel.style.height = '5px'
+		pixel.style.width = '5px'
+		pixel.style.position = 'absolute'
+		canvas.appendChild(pixel)
+	
+}
+canvas.addEventListener('mousedown',()=>{
+canvas.addEventListener('mousemove',listener)
+})
+canvas.addEventListener('mouseup',()=>{
+canvas.removeEventListener('mousemove',listener)
+})
+/*
+button.addEventListener('click',()=>{
+	mouseCoord.forEach(coord=>{
+		let pixel = document.createElement('div')
+		pixel.style.top = coord[0]+'px'
+		pixel.style.left = coord[1]+'px'
+		pixel.style.backgroundColor = 'black'
+		pixel.style.margin = '0'
+		pixel.style.height = '5px'
+		pixel.style.width = '5px'
+		pixel.style.position = 'relative'
+		canvas.appendChild(pixel)
+	})
+})
+*/
+body.appendChild(canvas)
