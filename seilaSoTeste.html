@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		
+		.white:hover{
+			background-color: red
+		}
+	</style>
+</head>
+<body>
+<div style="position:absolute;right:0">
+	<input id="coordX">
+	<input id="coordY">
+	<input id="radius">
+	<button onclick="setCoords()">SetCoords</button>
+</div>
+
+<script>
+let body = document.getElementsByTagName('body');
+let contains = document.createElement('div');
+var topCoords = 0;
+var leftCoords = 0;
+var leftCoordsHelper = 0;
+for(var i =0; i<10000;i++){
+	var unit = document.createElement('div');
+	unit.style.height = '5px';
+	unit.style.width = '5px';
+	unit.style.margin = '1px';
+	unit.style.backgroundColor = 'white'
+	unit.class = 'white'
+	unit.style.position = 'absolute';
+	unit.className = 'unit'
+	if(i%100 == 0 ){
+		topCoords = i/100*7;
+		leftCoordsHelper = i
+	}
+	unit.style.top = topCoords+'px';
+	leftCoords = 7*(i-leftCoordsHelper)
+	unit.style.left = leftCoords+'px';
+	
+	
+	contains.appendChild(unit)
+	
+}
+function setCoords(){
+		var topCoords = Number(document.getElementById('coordX').value)
+		var leftCoords = Number(document.getElementById('coordY').value)
+		var radius = Number(document.getElementById('radius').value)
+		var unit = document.getElementsByClassName('unit')
+		for(var i = 0;i<10000;i++){
+			unit[i].style.backgroundColor = 'white'
+			var topUnit = Number(unit[i].style.top.split('').splice(0,unit[i].style.top.length-2).join(''))
+			var leftUnit = Number(unit[i].style.left.split('').splice(0,unit[i].style.left.length-2).join(''))
+			if(-1*((leftUnit-leftCoords)*(leftUnit-leftCoords)) >= (topUnit-topCoords)*(topUnit-topCoords)-radius){
+				console.log('aaa')
+				unit[i].style.backgroundColor = 'black'
+			}
+			
+		}
+		
+	}
+	body[0].appendChild(contains)
+</script>
+</body>
+</html>
